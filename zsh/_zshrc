@@ -1,0 +1,56 @@
+#
+# .zshrc is sourced in interactive shells.
+# It should contain commands to set up aliases,
+# functions, options, key bindings, etc.
+#
+
+autoload -U compinit
+compinit
+
+#allow tab completion in the middle of a word
+setopt COMPLETE_IN_WORD
+
+## keep background processes at full speed
+#setopt NOBGNICE
+## restart running processes on exit
+#setopt HUP
+
+## history
+#setopt APPEND_HISTORY
+## for sharing history between zsh processes
+#setopt INC_APPEND_HISTORY
+#setopt SHARE_HISTORY
+
+## never ever beep ever
+#setopt NO_BEEP
+
+## automatically decide when to page a list of completions
+#LISTMAX=0
+
+HISTFILE=~/.histfile
+HISTSIZE=1000
+SAVEHIST=1000
+
+## disable mail checking
+#MAILCHECK=0
+
+# autoload -U colors
+autoload -U colors
+
+PROMPT='
+%~
+   %n$ '
+
+# User specific aliases and functions
+alias vi='vim'
+alias gitb='git branch'
+alias gitco='git checkout'
+alias gitp='git pull'
+alias gits='git status'
+
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+
+zstyle -e ':completion:*:*:*'hosts 'reply=($(cat ~/.hosts))'
