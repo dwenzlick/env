@@ -40,6 +40,9 @@ autoload -U colors
 PROMPT='
 %~
    %n$ '
+# PS1="
+# %{$fg[magenta]%}%n%{$reset_color%}@%{$fg[yellow]%}%m%{$reset_color%}:%~
+#    $ "
 
 # User specific aliases and functions
 alias vi='vim'

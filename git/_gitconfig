@@ -1,0 +1,31 @@
+[user]
+    name = Dave Wenzlick
+    email = dwenzlick@gmail.com
+[core]
+    autocrlf = input
+    safecrlf = true
+    pager = less -XR -x2
+    excludesfile = ~/.gitignore_global
+[color]
+    ui = true
+    branch = auto
+    diff = auto
+    interactive = auto
+    status = auto
+[color "branch"]
+    current = green
+    remote = red
+[color "diff"]
+    old = red
+    new = green
+    meta = yellow
+    frag = magenta
+[color "status"]
+    added = green
+    changed = yellow
+    untracked = red
+[alias]
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)%Creset' --abbrev-commit --date=relative
+	dag = log --graph --format='format:%C(yellow)%h%C(reset) %C(blue)"%cn" <%ce>%C(reset) %C(magenta)%cr%C(reset)%C(yellow)%d%C(reset)%n%s' --date-order
+[push]
+	default = simple
