@@ -27,5 +27,3 @@
 [alias]
 	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)%Creset' --abbrev-commit --date=relative
 	dag = log --graph --format='format:%C(yellow)%h%C(reset) %C(blue)"%cn" <%ce>%C(reset) %C(magenta)%cr%C(reset)%C(yellow)%d%C(reset)%n%s' --date-order
-[push]
-	default = simple

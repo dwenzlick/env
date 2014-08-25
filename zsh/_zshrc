@@ -37,12 +37,9 @@ SAVEHIST=1000
 # autoload -U colors
 autoload -U colors
 
-PROMPT='
-%~
-   %n$ '
-# PS1="
-# %{$fg[magenta]%}%n%{$reset_color%}@%{$fg[yellow]%}%m%{$reset_color%}:%~
-#    $ "
+RPS1="[$(print '%{\e[1;36m%}%W%{\e[0m%}')]"
+PROMPT="$(print '%{\e[1;32m%}%n%{\e[0m%}@%{\e[1;32m%}%m%{\e[0m%} [%{\e[1;35m%}%~%{\e[0m%}]')
+$(print '%{\e[1;36m%}%t %{\e[1;31m%}%# %{\e[0m%}')"
 
 # User specific aliases and functions
 alias vi='vim'
