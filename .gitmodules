@@ -1,3 +1,12 @@
 [submodule "vim/_vim/bundle/command-t"]
 	path = vim/_vim/bundle/command-t
 	url = git://git.wincent.com/command-t.git
+[submodule "vim/_vim/bundle/delimitMate"]
+	path = vim/_vim/bundle/delimitMate
+	url = https://github.com/Raimondi/delimitMate.git
+[submodule "vim/_vim/bundle/closetag"]
+	path = vim/_vim/bundle/closetag
+	url = https://github.com/alvan/vim-closetag.git
+[submodule "vim/_vim/bundle/ctrlp"]
+	path = vim/_vim/bundle/ctrlp
+	url = https://github.com/kien/ctrlp.vim.git
