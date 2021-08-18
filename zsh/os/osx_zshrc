@@ -1,0 +1,4 @@
+# OSX specific aliases and functions
+alias ls='ls -GFhla'
+
+
