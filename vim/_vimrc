@@ -1,41 +1,9 @@
 " This should be first.
 set nocompatible                " choose no compatibility with legacy vi
 
-"g:my_vim_dir is used elsewhere in my vim configurations
-let g:my_vim_dir=expand("$HOME/.vim")
-
-"$HOME/.vim and $HOME/.vim/after are in the &rtp on unix
-"But on windows, they need to be added.
-if has("win16") || has("win32") || has("win64")
-  "add g:my_vim_dir to the front of the runtimepath
-   execute "set rtp^=".g:my_vim_dir
-  "add g:my_vim_dir\after to the end of the runtimepath
-  execute "set rtp+=".g:my_vim_dir."\\after"
-  "Note, pathogen#infect() looks for the 'bundle' folder in each path
-  "of the &rtp, where the last dir in the '&rtp path' is not 'after'. The
-  "<path>\bundle\*\after folders will be added if and only if
-  "the corresponding <path>\after folder is in the &rtp before
-  "pathogen#infect() is called.  So it is very important to add the above
-  "'after' folder.
-  "(This applies to vim plugins such as snipmate, tabularize, etc.. that
-  " are loaded by pathogen (and perhaps vundle too.))
-
-  " Not necessary, but I like to cleanup &rtp to use \ instead of /
-  " when on windows machines
-  let &rtp=substitute(&rtp,"[/]","\\","g")
-
-  "On windows, if called from cygwin or msys, the shell needs to be changed 
-  "to cmd.exe to work with certain plugins that expect cmd.exe on windows versions   
-  "of vim.
-  if &shell=~#'bash$'
-    set shell=$COMSPEC " sets shell to correct path for cmd.exe
-  endif
-endif
-
 " Use pathogen to easily modify the runtime path to include all
 " plugins under the ~/.vim/bundle directory
-call pathogen#helptags()
-call pathogen#infect()
+"execute pathogen#infect()
 
 syntax enable
 set encoding=utf-8
@@ -44,7 +12,7 @@ set number                      " always show line numbers
 
 " Whitespace
 set nowrap                      " don't wrap lines
-set tabstop=4 shiftwidth=4      " a tab is four spaces
+set tabstop=2 shiftwidth=2      " a tab is two spaces (ruby pattern)
 set expandtab                   " use spaces, not tabs
 set backspace=indent,eol,start  " backspace through everything in insert mode
 set autoindent                  " auto-indenting is on
@@ -64,6 +32,7 @@ colorscheme desert
 set history=1000         " remember more commands and search history
 set undolevels=1000      " use many muchos levels of undo
 set wildignore=*.swp,*.bak,*.pyc,*.class
+" set title                " change the terminal's title
 set visualbell           " don't beep
 set noerrorbells         " don't beep
 
@@ -78,6 +47,9 @@ nmap <silent> <leader>sv :so $MYVIMRC<CR>
 filetype plugin indent on       " load file type plugins + indentation
 autocmd filetype python set expandtab
 
+autocmd FileType html,htmldjango,jinjahtml,eruby,mako let b:closetag_html_style=1
+autocmd FileType html,xhtml,xml,htmldjango,jinjahtml,eruby,mako source ~/.vim/bundle/closetag/plugin/closetag.vim
+
 "This line will make Vim set out tab characters, trailing whitespace and invisible spaces visually, 
 "     and additionally use the # sign at the end of lines to mark lines that extend off-screen. 
 "     For more info, see :h listchars.
@@ -88,9 +60,46 @@ set listchars=tab:>.,trail:.,extends:#,nbsp:.
 set pastetoggle=<F2>
 " vim-togglemouse. It maps <F12> to toggle your mouse “focus” between Vim and the terminal.
 
-" Helpful commands
-cmap w!! w !sudo tee % >/dev/null
+" enable mouse for all modes (makes selection easier)
+" set mouse+=a
+
+set laststatus=2
+set statusline=
+set statusline+=\ %{fugitive#statusline()}
+set statusline+=\ %f
+set statusline+=%=
+set statusline+=\ %p%%
+set statusline+=\ %l:%c
+set statusline+=\ %y
+set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
+set statusline+=\ [%{&fileformat}\]
 
 " References
 " * http://nvie.com/posts/how-i-boosted-my-vim/
-" * http://stackoverflow.com/questions/10612362/setting-up-gvim-on-windows
+
+" https://github.com/pangloss/vim-javascript
+let g:javascript_plugin_jsdoc = 1
+let g:javascript_plugin_ngdoc = 1
+let g:javascript_plugin_flow = 1
+
+augroup javascript_folding
+    au!
+    au FileType javascript setlocal foldmethod=syntax
+augroup END
+
+let g:javascript_conceal_function             = "ƒ"
+let g:javascript_conceal_null                 = "ø"
+let g:javascript_conceal_this                 = "@"
+let g:javascript_conceal_return               = "⇚"
+let g:javascript_conceal_undefined            = "¿"
+let g:javascript_conceal_NaN                  = "ℕ"
+let g:javascript_conceal_prototype            = "¶"
+let g:javascript_conceal_static               = "•"
+let g:javascript_conceal_super                = "Ω"
+let g:javascript_conceal_arrow_function       = "⇒"
+let g:javascript_conceal_noarg_arrow_function = "🞅"
+let g:javascript_conceal_underscore_arrow_function = "🞅"
+
+set conceallevel=1
+map <leader>l :exec &conceallevel ? "set conceallevel=0" : "set conceallevel=1"<CR>
+
