@@ -1,6 +1,3 @@
-[submodule "vim/vim/pack/plugins/start/command-t"]
-	path = vim/vim/pack/plugins/start/command-t
-	url = git://git.wincent.com/command-t.git
 [submodule "vim/vim/pack/plugins/start/delmitmate"]
 	path = vim/vim/pack/plugins/start/delmitmate
 	url = git://github.com/Raimondi/delimitMate.git
