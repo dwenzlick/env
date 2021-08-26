@@ -1,0 +1,26 @@
+# OSX specific aliases and functions
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+source $ZSH_ENV_HOME/os/mac_osx/tmux_zsh
+
+alias ls='ls -GFhla'
+
+alias emacs='emacs -nw'
+
+# node (nvm - node version manger: https://github.com/nvm-sh/nvm)
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# ruby (https://www.moncefbelyamani.com/how-to-install-xcode-homebrew-git-rvm-ruby-on-mac/)
+source /usr/local/share/chruby/chruby.sh
+source /usr/local/share/chruby/auto.sh
+chruby ruby-2.7.2
+
+# asdf ()
+source /usr/local/opt/asdf/libexec/asdf.sh
+
+
+function octal_mode {
+  stat -f %Lp $1
+}

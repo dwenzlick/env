@@ -22,14 +22,14 @@ autoload -U colors
 # Get tmux to work
 bindkey -e
 
-export PATH=$PATH:$WENZ_HOME/bin
+export PATH=$PATH:$WENZ_ENV_HOME/bin
 
 if [[ `uname` == 'Linux' ]]
 then
-    source $ZSH_ENV_HOME/os/linux_zshrc
+    source $ZSH_ENV_HOME/os/linux/linux_zshrc
 elif [[ `uname` == 'Darwin' ]]
 then
-    source $ZSH_ENV_HOME/os/osx_zshrc
+    source $ZSH_ENV_HOME/os/mac_osx/osx_zshrc
 else
     echo "$WENZ_ENV_HOME on unknown platform"
 fi
@@ -54,8 +54,3 @@ alias vimv="vi ~/.vimrc"
 alias vims="vi ~/.ssh/config"
 
 alias gits='git status'
-
-#alias ls='ls --color=auto'
-#alias grep='grep --color=auto'
-#alias fgrep='fgrep --color=auto'
-#alias egrep='egrep --color=auto'
