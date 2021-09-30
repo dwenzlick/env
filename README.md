@@ -14,3 +14,22 @@ TODO: initialize submodules
 Undo: add -D to command
 
 https://systemcrafters.net/managing-your-dotfiles/using-gnu-stow/
+
+stow . --target=~/projects/fake_home
+
+git submodule init
+git submodule update --remote --merge
+git submodule add <repo> <path>
+git submodule deinit <path>
+git rm <path>
+
+TODO
+- Merge WenzlickHome
+- Merge env/Work (submodule?)
+- Get Adhoc under source
+- tmux-MacOSX-pasteboard as a submodule
+- convert to env stow
+- Add .ssh, .bash_profile, .hgignore_global
+- Add .npmrc, .aws, .saml2aws, .tool-versions, .yarnrc
+- Add .emacs, .doom
+- Instructions from checkout to run of stow

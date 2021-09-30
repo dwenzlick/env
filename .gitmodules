@@ -1,21 +1,24 @@
 [submodule "vim/vim/pack/plugins/start/delmitmate"]
-	path = vim/vim/pack/plugins/start/delmitmate
+	path = .vim/pack/plugins/start/delmitmate
 	url = git://github.com/Raimondi/delimitMate.git
 [submodule "vim/vim/pack/plugins/start/closetag"]
-	path = vim/vim/pack/plugins/start/closetag
+	path = .vim/pack/plugins/start/closetag
 	url = git://github.com/docunext/closetag.vim.git
 [submodule "vim/vim/pack/plugins/start/vim-fugitive"]
-	path = vim/vim/pack/plugins/start/vim-fugitive
+	path = .vim/pack/plugins/start/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive.git
 [submodule "vim/vim/pack/plugins/start/vim-airline"]
-	path = vim/vim/pack/plugins/start/vim-airline
+	path = .vim/pack/plugins/start/vim-airline
 	url = https://github.com/vim-airline/vim-airline.git
 [submodule "vim/vim/pack/plugins/start/ctrlp"]
-	path = vim/vim/pack/plugins/start/ctrlp
+	path = .vim/pack/plugins/start/ctrlp
 	url = https://github.com/kien/ctrlp.vim.git
 [submodule "vim/vim/pack/plugins/start/syntastic"]
-	path = vim/vim/pack/plugins/start/syntastic
+	path = .vim/pack/plugins/start/syntastic
 	url = https://github.com/vim-syntastic/syntastic.git
 [submodule "vim/vim/pack/plugins/start/vim-javascript"]
-	path = vim/vim/pack/plugins/start/vim-javascript
+	path = .vim/pack/plugins/start/vim-javascript
 	url = https://github.com/pangloss/vim-javascript
+[submodule ".zprezto"]
+	path = .zprezto
+	url = git@github.com:dwenzlick/prezto.git
