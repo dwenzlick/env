@@ -1,36 +1,47 @@
 [user]
-    name = Dave Wenzlick
-    email = dwenzlick@gmail.com
+	name = Dave Wenzlick
+	email = dwenzlick@gmail.com
 [core]
-    autocrlf = input
-    safecrlf = true
-    pager = less -FMRiX
-    excludesFile = ~/.gitignore_global
-    editor = vim
+	autocrlf = input
+	safecrlf = true
+	pager = less -FMRiX
+	excludesfile = /Users/dwenzlick/.gitignore_global
+	editor = vim
 [color]
-    ui = true
-    branch = auto
-    diff = auto
-    interactive = auto
-    status = auto
+	ui = true
+	branch = auto
+	diff = auto
+	interactive = auto
+	status = auto
 [color "branch"]
-    current = green
-    remote = red
+	current = green
+	remote = red
 [color "diff"]
-    old = red
-    new = green
-    meta = yellow
-    frag = magenta
+	old = red
+	new = green
+	meta = yellow
+	frag = magenta
 [color "status"]
-    added = green
-    changed = yellow
-    untracked = red
+	added = green
+	changed = yellow
+	untracked = red
 [push]
 	default = simple
 [pull]
-    rebase = true
+	rebase = true
 [alias]
-    dag = log --graph --format='format:%C(yellow)%h%C(reset) %C(blue)\"%an\" <%ae>%C(reset) %C(magenta)%cr%C(reset)%C(auto)%d%C(reset)%n%s' --date-order
-    st = status -sb
+	dag = log --graph --format='format:%C(yellow)%h%C(reset) %C(blue)\"%an\" <%ae>%C(reset) %C(magenta)%cr%C(reset)%C(auto)%d%C(reset)%n%s' --date-order
+	st = status -sb
 [rebase]
-    autoStash = true
+	autoStash = true
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true

@@ -1,9 +1,9 @@
 " This should be first.
 set nocompatible                " choose no compatibility with legacy vi
 
-" Use pathogen to easily modify the runtime path to include all
-" plugins under the ~/.vim/bundle directory
-"execute pathogen#infect()
+" For plugins - since vim 8.0 there is native plugin management. See the article below for instructions on how to use
+" submodules for managing plugins.
+" https://shapeshed.com/vim-packages/
 
 syntax enable
 set encoding=utf-8
@@ -44,7 +44,9 @@ set noswapfile
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
 
+filetype off " <<< this line
 filetype plugin indent on       " load file type plugins + indentation
+syntax on
 autocmd filetype python set expandtab
 
 autocmd FileType html,htmldjango,jinjahtml,eruby,mako let b:closetag_html_style=1
@@ -82,11 +84,6 @@ let g:javascript_plugin_jsdoc = 1
 let g:javascript_plugin_ngdoc = 1
 let g:javascript_plugin_flow = 1
 
-augroup javascript_folding
-    au!
-    au FileType javascript setlocal foldmethod=syntax
-augroup END
-
 let g:javascript_conceal_function             = "ƒ"
 let g:javascript_conceal_null                 = "ø"
 let g:javascript_conceal_this                 = "@"
@@ -100,6 +97,16 @@ let g:javascript_conceal_arrow_function       = "⇒"
 let g:javascript_conceal_noarg_arrow_function = "🞅"
 let g:javascript_conceal_underscore_arrow_function = "🞅"
 
-set conceallevel=1
+set conceallevel=0
 map <leader>l :exec &conceallevel ? "set conceallevel=0" : "set conceallevel=1"<CR>
+
+" Syntastic: https://github.com/vim-syntastic/syntastic?utm_source=pocket_mylist
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
