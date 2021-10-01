@@ -1,5 +1,5 @@
 export WENZ_ENV_HOME="$HOME/projects/env"
-export ZSH_ENV_HOME="$WENZ_ENV_HOME/zsh"
+export ZSH_ENV_HOME="$HOME/.zsh"
 
 autoload -U compinit
 compinit
@@ -22,7 +22,7 @@ autoload -U colors
 # Get tmux to work
 bindkey -e
 
-export PATH=$PATH:$WENZ_ENV_HOME/bin
+export PATH=$PATH:$HOME/.bin
 
 if [[ `uname` == 'Linux' ]]
 then
