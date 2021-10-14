@@ -27,9 +27,19 @@ TODO
 - Merge WenzlickHome
 - Merge env/Work (submodule?)
 - Get Adhoc under source
-- tmux-MacOSX-pasteboard as a submodule
-- convert to env stow
+- tmux-MacOSX-pasteboard as a submodule?
 - Add .ssh, .bash_profile, .hgignore_global
 - Add .npmrc, .aws, .saml2aws, .tool-versions, .yarnrc
 - Add .emacs, .doom
 - Instructions from checkout to run of stow
+
+
+https://brew.sh/
+https://github.com/powerline/fonts
+https://www.gnu.org/software/stow/
+http://asdf-vm.com/
+
+
+
+defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
+ Command + Shift + G
