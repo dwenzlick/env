@@ -1,7 +1,7 @@
 env
 ===
 
-Handy configuration files and scripts managed via gnu stow.
+Handy configuration files and scripts managed via gnu stow and git submodules.
 
 TODO: Refactor this package such that it mimics my home dir
 TODO: Write a script to invoke stow
@@ -43,3 +43,5 @@ http://asdf-vm.com/
 
 defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
  Command + Shift + G
+ 
+ https://github.com/dbader/alfred-countdown-timer
