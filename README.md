@@ -17,11 +17,19 @@ https://systemcrafters.net/managing-your-dotfiles/using-gnu-stow/
 
 stow . --target=~/projects/fake_home
 
+```
 git submodule init
 git submodule update --remote --merge
 git submodule add <repo> <path>
 git submodule deinit <path>
 git rm <path>
+
+
+cd $ZPREZTODIR
+git pull
+git submodule sync --recursive
+git submodule update --init --recursive
+```
 
 TODO
 - Merge WenzlickHome
