@@ -3,3 +3,4 @@
 .kitchen/
 Berksfile.lock
 .idea/
+.irb_history

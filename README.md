@@ -6,7 +6,7 @@ Handy configuration files and scripts managed via gnu stow and git submodules.
 TODO: Refactor this package such that it mimics my home dir
 TODO: Write a script to invoke stow
 
-   stow --dir=src --target=dest
+   stow . --target=dest
 
 TODO: initialize submodules
 .stow-local-ignore

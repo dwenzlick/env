@@ -1,7 +1,6 @@
-export WENZ_ENV_HOME="$HOME/projects/env"
 export ZSH_ENV_HOME="$HOME/.zsh"
 
-autoload -U compinit
+autoload -Uz compinit
 compinit
 
 #allow tab completion in the middle of a word
@@ -31,7 +30,7 @@ elif [[ `uname` == 'Darwin' ]]
 then
     source $ZSH_ENV_HOME/os/mac_osx/osx_zshrc
 else
-    echo "$WENZ_ENV_HOME on unknown platform"
+    echo "$ZSH_ENV_HOME on unknown platform"
 fi
 
 # Source Prezto.
@@ -44,6 +43,12 @@ export EDITOR=vim
 
 source $ZSH_ENV_HOME/common/common-alias
 source $ZSH_ENV_HOME/common/ssh
+
+# Source Workspecific files. These are kept out of this repository because they
+# should not be checked into a public git repository
+if [[ -s "${ZDOTDIR:-$HOME}/.work" ]]; then
+  source "${ZDOTDIR:-$HOME}/.work/.zshrc"
+fi
 
 alias gits="git status"
 
