@@ -31,6 +31,9 @@ git submodule sync --recursive
 git submodule update --init --recursive
 ```
 
+Removing submodules
+https://gist.github.com/myusuf3/7f645819ded92bda6677
+
 TODO
 - Merge WenzlickHome
 - Merge env/Work (submodule?)
