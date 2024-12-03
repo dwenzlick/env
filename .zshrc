@@ -46,7 +46,7 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 export TERM=xterm-256color
-export EDITOR=vim
+export EDITOR=nvim
 
 source $ZSH_ENV_HOME/common/common-alias
 source $ZSH_ENV_HOME/common/ssh
@@ -60,10 +60,12 @@ fi
 alias gits="git status"
 
 # Quick edits
-alias vimz="vi ~/.zshrc"
-alias vimg="vi ~/.gitconfig"
-alias vimv="vi ~/.vimrc"
-alias vims="vi ~/.ssh/config"
+alias vi="nvim"
+alias vim="nvim"
+alias vimz="nvim ~/.zshrc"
+alias vimg="nvim ~/.gitconfig"
+alias vimv="nvim ~/.vimrc"
+alias vims="nvim ~/.ssh/config"
 
 alias gits='git status'
 
